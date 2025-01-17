@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Bebas-Regular';
+    src: url('../components/fonts/Garet-Book.woff2') format('woff2'),
+         url('../components/fonts/Garet-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
