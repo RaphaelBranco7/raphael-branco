@@ -18,7 +18,7 @@ p, li {
 
 /* Barra de Navegação */
 header, .navbar {
-    background-color: #12303D ;
+    background-color: #12303D;
 }
 
 #nav-container {
@@ -36,11 +36,33 @@ header, .navbar {
 }
 
 .navbar-brand:hover {
-    color:#fff;
+    color: #fff;
 }
 
 #navbar-links a {
     color: #fff;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+#navbar-links a:hover {
+    color: #00d4ff; /* Cor no hover */
+}
+
+/* Linha animada embaixo do link */
+#navbar-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: 5px;
+    background-color: #00d4ff;
+    transition: width 0.3s ease;
+}
+
+#navbar-links a:hover::after {
+    width: 100%;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -162,89 +184,128 @@ header, .navbar {
     color:#2a93c0;
 }
 
-/* Projetos */
+/* Área de projetos */
 #projects-area {
-	background-color: #F9F9F9;
-    /*text-align: center;*/
+  background-color: #F9F9F9;
+  padding: 60px 0;
 }
 
-.card-body {
-	text-align: center;
+.project-card {
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Footer*/
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-card .card-title {
+  font-weight: bold;
+  color: #12303D;
+}
+
+.project-card .card-text {
+  color: #444;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.project-card .btn {
+  margin: 0 5px 5px 0;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-card .btn:hover {
+  background-color: #12303D;
+  color: #fff;
+}
+
+
+/* Footer */
 #contact-area {
-    text-align: center;
+  text-align: center;
+  padding: 60px 0;
+  background-color: #f1f1f1;
 }
 
 .contact-box {
-    padding-bottom: 50px;
-    margin-bottom: 50px;
-    border-bottom: 1px solid #12303D;
+  margin-bottom: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-box:hover {
+  transform: translateY(-4px);
 }
 
 .contact-box i {
-	color: #444;
-	border: solid 1px #444;
-	border-radius: 50px;
-	width: 55px;
-	height: 55px;
-	line-height: 55px;
-	font-size: 24px;
-	margin-bottom: 20px;
+  color: #fff;
+  background-color: #12303D;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .contact-box p {
-	font-size: 16px;
+  font-size: 16px;
+  margin-bottom: 5px;
 }
 
 .contact-title {
-	font-weight: bold;
-	color: #12303D;
+  font-weight: bold;
+  color: #12303D;
 }
 
-#msg-box p {
-	font-size: 22px;
+/* Redes sociais */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
 }
 
-#contact-form input[type="text"], #contact-form input[type="email"], #contact-form textarea {
-	margin-bottom: 15px;
-	border-radius: 0;
+.social-icons a {
+  font-size: 1.8rem;
+  color: #666;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-#contact-form .main-btn {
-	width: 200px;
-	height: 60px;
-	background-color: #353a3d;
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #12303D;
 }
 
-#contact-form .main-btn:hover {
-	color: #65DAF9;
-}
-
-/* Copyriht*/
+/* Copy */
 #copy-area {
-	background-color: #12303D;
+  background-color: #12303D;
 }
 
 #copy-area .container {
-	padding: 10px 0;
-	text-align: center;
+  padding: 15px 0; /* altura mais fina */
+  text-align: center;
 }
 
-#copy-area .container p {
-	margin-bottom: 0;
-    color:#ffffff;
+#copy-area p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 14px;
 }
 
-#copy-area .container a {
-	font-weight: bold;
-	color: #ffffff;
+#copy-area a {
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-#copy-area .container a:hover {
-	text-decoration: none;
-	color: #000000;
+#copy-area a:hover {
+  color: #00d4ff;
 }
 
 /* Responsividade*/
@@ -315,6 +376,7 @@ header, .navbar {
     /*Contato*/
     .contact-box {
         border: none;
-        margin-bottom: 0;
+        margin-bottom: 30px;  /* aumentamos o espaço entre os blocos */
+        padding-bottom: 20px; /* opcional para dar espaço interno */
     }
 }
